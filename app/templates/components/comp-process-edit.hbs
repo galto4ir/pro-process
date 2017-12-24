@@ -1,0 +1,6 @@
+{{yield}}
+<form {{action 'addProcess' name id on="submit"}}>
+    {{input type="hidden" value=id}}
+    {{input type="text" value=name placeholder="Процесс нэр"}}
+    <input type="submit" value="Нэмэх">
+</form>

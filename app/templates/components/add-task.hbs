@@ -1,0 +1,12 @@
+<form {{action "addTask" title on="submit" }}>
+    {{input value=process type="hidden"}}
+    <div class="row">
+        <div class="col-xs-7">
+            {{input value=title type="text" placeholder="Хийх зүйлс..." class="form-control"}}
+        </div>
+        <div class="col-xs-5">
+            <input type="submit" value="Нэмэх" class="btn btn-default btn-block">
+        </div>
+    </div>
+</form>
+{{yield}}

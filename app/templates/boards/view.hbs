@@ -1,0 +1,52 @@
+<h1>
+    {{model.title}}
+    <button class="btn btn-danger pull-right" {{action "removeBoard" model}}>
+        Устгах
+    </button>
+</h1>
+<hr>
+<div class="row">
+    {{#each model.processes as |process|}}
+    <div class="col-xs-12 col-md-3">
+        <div class="panel panel-default stop">
+            <div class="panel-heading">
+                {{process.name}}
+                <span class="badge pull-right" {{action "removeProcess" process board}}>
+                    x
+                </span>
+            </div>
+            <ul class="list-group">
+                {{#each process.tasks as |task|}}
+                <li class="list-group-item">
+                    <span {{action "show" task.id}} class="task">
+                        <i class="fa fa-angle-down"></i> {{task.title}}</span>
+                    <span class="badge" {{action "removeTask" task process}}>
+                        x
+                    </span>
+                    <div id={{task.id}} class="moving">
+                        {{#each model.processes as |pro|}}
+                            {{#if (ignore-pro process.id pro.id)}}
+                                <span class="label label-default" {{action "movingTask" task process pro}}>
+                                    {{pro.name}}
+                                </span>
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                </li>
+                {{/each}}
+                <li class="list-group-item">
+                    {{add-task actionToCall="addTask" process=process}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    {{/each}}
+    <div class="col-xs-12 col-md-3">
+        <form {{action 'addProcess' name on="submit" }}>
+            <div class="form-group">
+                {{input type="text" value=name placeholder="Процесс нэр" class="form-control"}}
+            </div>
+            <input type="submit" value="Нэмэх" class="btn btn-success">
+        </form>
+    </div>
+</div>

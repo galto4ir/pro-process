@@ -1,0 +1,22 @@
+<div class="row">
+    {{#each model as |board|}}
+    <div class="col-xs-12 col-md-3">
+        {{comp-board board=board}}
+    </div>
+    {{/each}}
+
+    <div class="col-xs-12 col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form {{action "publishBoard" title on="submit" }}>
+                    <div class="form-group">
+                        {{input value=title placeholder="Төслийн нэр" class="form-control"}}
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">
+                        Нэмэх
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
