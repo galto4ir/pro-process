@@ -14,5 +14,5 @@ Trello - ын жижиг хэмжээний хувилбар.
 ```
 cd pro-process
 npm install
-ember serve
+npm start
 ```
