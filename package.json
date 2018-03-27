@@ -2,9 +2,9 @@
   "name": "pro-process",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for pro-process goes here",
+  "description": "Pro process - Tiny version of trello",
   "license": "MIT",
-  "author": "",
+  "author": "Galt Davaa",
   "directories": {
     "doc": "doc",
     "test": "tests"
